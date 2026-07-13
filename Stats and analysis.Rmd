@@ -11,7 +11,8 @@ output:
 # Scope
 
 This workflow reproduces the downstream microbiome analyses reported in the manuscript.
-It starts from a processed, CSS-normalized `phyloseq` object containing the filtered ASV table, sample metadata, SILVA taxonomy, and a phylogenetic tree. Sequence processing, contaminant removal, filtering, tree construction, and CSS normalization were performed as described in the manuscript and is available in a separate rmd file (Amplicon pre processing.rmd) available in GitHub.
+It starts from a processed, CSS-normalized `phyloseq` object containing the filtered ASV table, sample metadata, SILVA taxonomy, and a phylogenetic tree. 
+Sequence processing, contaminant removal, filtering, tree construction, and CSS normalization were performed as described in the manuscript and is available in a separate rmd file (Amplicon pre processing.rmd) available in GitHub.
 
 The analyses include alpha diversity, Bray-Curtis NMDS and PERMANOVA, genus-level community composition, and abundance weighted beta nearest taxon index (βNTI).
 
