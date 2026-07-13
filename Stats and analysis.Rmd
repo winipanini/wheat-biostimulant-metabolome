@@ -11,13 +11,9 @@ output:
 # Scope
 
 This workflow reproduces the downstream microbiome analyses reported in the manuscript.
-It starts from a processed, CSS-normalized `phyloseq` object containing the filtered ASV
-table, sample metadata, SILVA taxonomy, and a phylogenetic tree. Sequence processing,
-contaminant removal, filtering, tree construction, and CSS normalization were performed as
-described in the manuscript and is available in a separate rmd file (Amplicon pre-processing.rmd) available in GitHub.
+It starts from a processed, CSS-normalized `phyloseq` object containing the filtered ASV table, sample metadata, SILVA taxonomy, and a phylogenetic tree. Sequence processing, contaminant removal, filtering, tree construction, and CSS normalization were performed as described in the manuscript and is available in a separate rmd file (Amplicon pre processing.rmd) available in GitHub.
 
-The analyses include alpha diversity, Bray-Curtis NMDS and PERMANOVA, genus-level
-community composition, and abundance-weighted beta nearest taxon index (βNTI).
+The analyses include alpha diversity, Bray-Curtis NMDS and PERMANOVA, genus-level community composition, and abundance weighted beta nearest taxon index (βNTI).
 
 # Setup
 
@@ -89,9 +85,7 @@ ps
 
 # Alpha diversity
 
-Observed richness was square-root transformed. Treatment, sampling time point, and their
-interaction were tested using linear models. Tukey-adjusted treatment contrasts were
-calculated within each sampling time point.
+Observed richness was square-root transformed. Treatment, sampling time point, and their interaction were tested using linear models. Tukey-adjusted treatment contrasts were calculated within each sampling time point.
 
 ```{r alpha-diversity}
 observed_df <- estimate_richness(ps, measures = "Observed") %>%
@@ -148,10 +142,7 @@ alpha_plot
 
 # Bray-Curtis beta diversity
 
-The input ASV table is already CSS-normalized. No additional normalization is applied before
-Bray-Curtis dissimilarity. The submitted analysis compares T2 and T3. Sequential PERMANOVA
-terms are tested in the order Treatment, Time point, and their interaction to reproduce the
-submitted analysis.
+The input ASV table is already CSS-normalized. No additional normalization is applied before Bray-Curtis dissimilarity. The submitted analysis compares T2 and T3. Sequential PERMANOVA terms are tested in the order Treatment, Time point, and their interaction to reproduce the submitted analysis.
 
 ```{r beta-diversity, fig.width=7, fig.height=5}
 ps_beta <- subset_samples(ps, Time_point %in% selected_timepoints)
@@ -217,9 +208,7 @@ dispersion_test_t2_t3
 
 # Genus-level community composition
 
-For visualization only, CSS-normalized abundances are converted to within-sample relative
-abundances. The 15 most abundant genera are selected separately for each sampling time
-point; all remaining genera are grouped as `Other`.
+For visualization only, CSS-normalized abundances are converted to within-sample relative abundances. The 15 most abundant genera are selected separately for each sampling time point; all remaining genera are grouped as `Other`.
 
 ```{r community-composition, fig.width=11, fig.height=5}
 ps_composition <- transform_sample_counts(ps, function(x) x / sum(x))
@@ -296,11 +285,7 @@ community_plot
 
 # Phylogenetic turnover (βNTI)
 
-βNTI is calculated separately for each Treatment × Time point subset. Positive values above
-+2 indicate variable selection, values below -2 indicate homogeneous selection, and values
-between -2 and +2 fall within the null expectation. Pairwise Wilcoxon tests reproduce the
-analysis used for the submitted figure. Because pairwise βNTI values can share samples,
-inferential results should be interpreted cautiously.
+βNTI is calculated separately for each Treatment × Time point subset. Positive values above +2 indicate variable selection, values below -2 indicate homogeneous selection, and values between -2 and +2 fall within the null expectation. Pairwise Wilcoxon tests reproduce the analysis used for the submitted figure. Because pairwise βNTI values can share samples, inferential results should be interpreted cautiously.
 
 ```{r bnti-functions}
 prune_to_tree_and_data <- function(ps_object) {
