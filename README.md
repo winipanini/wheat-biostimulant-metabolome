@@ -2,7 +2,7 @@
 
 Companion repository for the paper "**Microbial biostimulants shape metabolite profiles of grains of hydroponic indoor wheat**" 
 
-by: **Sebastian Eichelsbacher**1 & **Stefanie Thaqi**2, Francesco Orsini3, Golia Roshani3, Afsaneh Nematpour3, Gerd Patrick Bienert4, Thomas D Alcock4,8, Corinna Dawid5, Gionata Martinazzoli5, Timo D Stark5, Srotoswini Joardar6, Michael Schloter2,7, Senthold Asseng1, **Stefanie Schulz**7,*
+by: **Sebastian Eichelsbacher**1 & **Stefanie Katharina Thaqi**2, Francesco Orsini3, Golia Roshani3, Afsaneh Nematpour3, Gerd Patrick Bienert4, Thomas D Alcock4,8, Corinna Dawid5, Gionata Martinazzoli5, Timo D Stark5, Srotoswini Joardar6, Michael Schloter2,7, Senthold Asseng1, **Stefanie Schulz**7,*
 
 1-Technical University of Munich, TUM School of Life Sciences, Department of Life Science Engineering, Digital Agriculture, HEF World Agricultural Systems Center, Freising, Germany;
 2-Technical University of Munich, School of Life Sciences, Chair of Environmental Microbiology, Freising, Germany;
