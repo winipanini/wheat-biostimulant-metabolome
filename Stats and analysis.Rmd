@@ -1,6 +1,6 @@
 ---
 title: "Reproducible downstream microbiome analysis"
-author: "Stefanie Katharina Thaqi and Srotoswini Joardar"
+author: "Stefanie Katharina Thaqi, Srotoswini Joardar and Lisa-Marie Streb"
 output:
   github_document:
     toc: true
