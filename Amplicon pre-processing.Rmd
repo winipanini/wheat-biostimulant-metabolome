@@ -162,7 +162,7 @@ Tax_all <- rbind(bound_less, most_info_rows) %>%
   as.matrix() 
 ```
 
-#9. Importing phylogenetic tree for downstream analysis
+# 9. Importing phylogenetic tree for downstream analysis
 
 All the ASV sequences were first stored in a FASTA file called "refseq". Using that file, a phylogenetic tree was generated with FastTree in Galaxy and exported as a Newick/NHX file. It was then imported into R, rooted, and in the next step, will be added to the phyloseq object. To execute this section an NHX file named "ML_tree_MW.nhx" containing the phylogenetic tree is needed
 ```{r}
